@@ -10,7 +10,7 @@ export function AnnouncementBar() {
   if (!isVisible) return null
 
   return (
-    <div className="relative bg-primary px-4 py-2.5 text-center text-sm text-primary-foreground">
+    <div className="relative bg-primary px-6 py-2.5 text-center text-sm text-primary-foreground">
       <p className="font-medium">
         Special Offer: Get 50% off on your first month's rent! Use code: <span className="font-bold">FIRST50</span>
       </p>

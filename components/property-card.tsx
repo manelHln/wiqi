@@ -15,21 +15,21 @@ interface PropertyCardProps {
 export function PropertyCard({ image, title, cashback }: PropertyCardProps) {
   return (
     <Card className="overflow-hidden transition-all cursor-pointer p-0">
-      <CardHeader className="p-0 relative overflow-hidden">
+      <CardHeader className="p-0 relative">
         <img
-          src={image || "/placeholder.svg"}
+          src={"/image.png"}
           alt={title}
           loading="lazy"
-          className="size-full object-cover transition-transform duration-300 h-[100px]"
+          className="size-full object-cover transition-transform duration-300 max-h-[150px]"
         />
         <img
-          src="/modern-luxury-apartment-exterior.jpg"
+          src="/asambeauty.jpg"
           alt={title}
           loading="lazy"
-          className="h-[75px] w-[150px] absolute left-0 right-0 -bottom-10 mx-auto"
+          className="h-[75px] w-[150px] absolute bg-white left-0 right-0 -bottom-10 border border-gray-300 rounded-lg z-10 mx-auto"
         />
       </CardHeader>
-      <CardContent className="px-2 flex flex-col items-center">
+      <CardContent className="px-6 pt-10 flex flex-col items-center">
         <h3 className="mb-2 text-center text-sm font-semibold text-foreground">
           {title}
         </h3>

@@ -28,18 +28,12 @@ export default function Home() {
         <HeroSection />
         <TrustedBrands />
         <CashbackHowItWorks />
-        {/* <HowItWorks /> */}
-        {/* <PropertyCategories /> */}
-        {/* <CTABanner /> */}
         <PlatformPreview />
-        {/* <TrustIndicators /> */}
         <Testimonials />
         <Statistics />
         <FeaturedProperties />
         <FAQSection />
         <AppDownloadCTA />
-        {/* <NewsletterCTA /> */}
-        <Partners />
       </main>
       <SiteFooter />
       <CopyrightFooter />

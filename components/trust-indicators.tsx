@@ -25,7 +25,7 @@ export function TrustIndicators() {
 
   return (
     <section className="bg-muted/50 py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-balance text-3xl font-bold text-foreground md:text-4xl">Why Choose Us</h2>
           <p className="mx-auto max-w-2xl text-pretty text-lg text-muted-foreground">

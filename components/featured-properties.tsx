@@ -23,11 +23,10 @@ const properties = [
 
 export function FeaturedProperties() {
   return (
-    <section className="">
-      <div className="container bg-primary/20 mx-auto px-10 py-6 md:py-10 rounded-2xl">
-        <h2 className="mb-4 text-center text-lg font-bold text-foreground md:text-xl">
-          Soyez malins, économisez plus en cumulant plus de réductions avec le
-          cashback et les codes promo !
+    <section className="bg-white pb-8">
+      <div className="max-w-7xl bg-primary/20 mx-auto px-6 sm:px-24 py-6 md:py-20 sm:rounded-2xl">
+        <h2 className="mb-8 text-center text-lg font-bold text-secondary md:text-xl">
+          Be smart, save more by combining discounts with cashback and promo codes!
         </h2>
 
         <div
@@ -40,11 +39,10 @@ export function FeaturedProperties() {
             </div>
           ))}
         </div>
-        <h3 className="text-secondary text-center text-xl my-6 font-semibold">
-          Envie de plus de réductions avec les codes promo de vos marchands
-          préférés
+        <h3 className="text-secondary text-center text-xl my-12 font-bold">
+          Want more discounts with promo codes from your favorite retailers?
         </h3>
-        <div className="flex ">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-5 ">
           <ul className="flex flex-col gap-1">
             <li className="text-secondary font-medium">
               <a
@@ -118,14 +116,7 @@ export function FeaturedProperties() {
                 Boursobank
               </a>
             </li>
-            <li className="text-secondary font-medium">
-              <a
-                title="Cashback et code promo Bouygues Telecom - Box Internet"
-                href="#"
-              >
-                Bouygues Telecom - Box Internet
-              </a>
-            </li>
+            
           </ul>
 
           <ul className="flex flex-col gap-1">
@@ -201,14 +192,7 @@ export function FeaturedProperties() {
                 Boursobank
               </a>
             </li>
-            <li className="text-secondary font-medium">
-              <a
-                title="Cashback et code promo Bouygues Telecom - Box Internet"
-                href="#"
-              >
-                Bouygues Telecom - Box Internet
-              </a>
-            </li>
+            
           </ul>
 
           <ul className="flex flex-col gap-1">
@@ -284,14 +268,7 @@ export function FeaturedProperties() {
                 Boursobank
               </a>
             </li>
-            <li className="text-secondary font-medium">
-              <a
-                title="Cashback et code promo Bouygues Telecom - Box Internet"
-                href="#"
-              >
-                Bouygues Telecom - Box Internet
-              </a>
-            </li>
+            
           </ul>
 
           <ul className="flex flex-col gap-1">
@@ -367,14 +344,7 @@ export function FeaturedProperties() {
                 Boursobank
               </a>
             </li>
-            <li className="text-secondary font-medium">
-              <a
-                title="Cashback et code promo Bouygues Telecom - Box Internet"
-                href="#"
-              >
-                Bouygues Telecom - Box Internet
-              </a>
-            </li>
+            
           </ul>
 
           <ul className="flex flex-col gap-1">
@@ -450,14 +420,7 @@ export function FeaturedProperties() {
                 Boursobank
               </a>
             </li>
-            <li className="text-secondary font-medium">
-              <a
-                title="Cashback et code promo Bouygues Telecom - Box Internet"
-                href="#"
-              >
-                Bouygues Telecom - Box Internet
-              </a>
-            </li>
+            
           </ul>
         </div>
         <div className="flex w-full justify-center mt-6">

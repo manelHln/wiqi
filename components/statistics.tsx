@@ -1,34 +1,94 @@
+"use client";
+
 import { Button } from "./ui/button";
+import { motion, useMotionValue, useTransform, animate, useInView } from "motion/react";
+import { useEffect, useRef } from "react";
+import EarlyAccess from "./early-access";
+
+function Counter({ value, duration = 2 }: { value: number; duration?: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const motionValue = useMotionValue(0);
+  const rounded = useTransform(motionValue, (latest) =>
+    Math.round(latest).toLocaleString("fr-FR")
+  );
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(motionValue, value, {
+        duration,
+        ease: "easeOut",
+      });
+
+      return controls.stop;
+    }
+  }, [motionValue, value, duration, isInView]);
+
+  return <motion.span ref={ref}>{rounded}</motion.span>;
+}
 
 export function Statistics() {
   return (
-    <section className="py-16 flex flex-col items-center">
-        <h2 className="text-xl text-secondary font-semibold mb-6">Qu’attendez-vous pour essayer le cashback iGraal et gagner de l’argent sur tous vos achats ?</h2>
-      <div className="container mx-auto px-4 mb-6">
+    <section className="py-16 md:py-24 flex flex-col items-center bg-white">
+      <h2 className="text-xl text-secondary font-semibold mb-6 text-center px-6">
+        What are you waiting for? Try Wiqi cashback and earn money on all your purchases!
+      </h2>
+      <div className="container mx-auto px-6 mb-6">
         <div className="grid gap-8 md:grid-cols-3">
-          <div className="text-center">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             <p className="mb-2 text-3xl font-bold text-primary md:text-4xl">
-              12 000 000
+              <Counter value={12000000} duration={2.5} />
             </p>
-            <p className="text-secondary text-xs">de personnes l'utilisent déjá !</p>
-          </div>
-          <div className="text-center">
+            <p className="text-secondary text-xs">
+              people are already using it!
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <p className="mb-2 text-3xl font-bold text-primary md:text-4xl">
-              <span className="text-sm">+DE</span> 100M$
+              <span className="text-sm">+DE</span> <Counter value={100} duration={2} />
+              M$
             </p>
-            <p className="text-secondary text-xs">de cashback reversés à nos membres</p>
-          </div>
-          <div className="text-center">
+            <p className="text-secondary text-xs">
+              in cashback paid out to our members
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <p className="mb-2 text-3xl font-bold text-primary md:text-4xl">
-              1 527
+              <Counter value={1527} duration={2} />
             </p>
-            <p className="text-secondary text-xs">marchands partenaires</p>
-          </div>
+            <p className="text-secondary text-xs">partner merchants</p>
+          </motion.div>
         </div>
       </div>
-      <Button className="bg-primary rounded-3xl py-4 px-6 text-lg">
-        Register - 10$ Gifted*
-      </Button>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="pt-6 px-6"
+      >
+        <EarlyAccess />
+      </motion.div>
     </section>
   );
 }

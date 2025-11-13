@@ -17,7 +17,6 @@ export function NewsletterCTA() {
     setIsLoading(true)
     setMessage("")
 
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     if (email && email.includes("@")) {
@@ -32,7 +31,7 @@ export function NewsletterCTA() {
 
   return (
     <section className="bg-gradient-to-r from-primary to-primary/80 py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="mx-auto max-w-2xl text-center">
           <Mail className="mx-auto mb-4 size-12 text-primary-foreground" />
           <h2 className="mb-4 text-balance text-3xl font-bold text-primary-foreground md:text-4xl">

@@ -11,8 +11,8 @@ export function Partners() {
   ]
 
   return (
-    <section className="border-y border-border bg-muted py-12">
-      <div className="container mx-auto px-4">
+    <section className="py-12">
+      <div className="container mx-auto px-6">
         <p className="mb-8 text-center text-sm font-medium uppercase tracking-wide text-muted-foreground">
           More than 150+ partner merchants
         </p>

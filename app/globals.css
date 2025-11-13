@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.98 0.001 0);
+  --background: oklch(97.989% 0.00104 11.274 / 0.795);
   --foreground: oklch(0.15 0.002 280);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0.002 280);
@@ -131,5 +131,9 @@
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  .container {
+    margin-inline: auto;
+    @apply sm:max-w-xl md:max-w-2xl lg:max-w-6xl;
   }
 }

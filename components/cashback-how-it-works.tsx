@@ -1,43 +1,41 @@
-import { Ticket, ShoppingBag, HandCoins } from "lucide-react"
+import Image from "next/image"
 
 const steps = [
   {
     number: "1.",
-    title: "J'active le cashback chez le marchand",
-    description: "Sur + de 1 500 marchands partenaires d'iGraal.",
-    icon: Ticket,
+    title: "I activate cashback at the merchant",
+    description: "Over 1,500 partner merchants of Wiqi.",
+    imageUrl: 'ccm-v3-icon-1.svg'
   },
   {
     number: "2.",
-    title: "Je fais mes achats en ligne",
-    description: "Via l'application ou le site web iGraal et en acceptant mes cookies",
-    icon: ShoppingBag,
+    title: "I do my shopping online.",
+    description: "Via the Wiqi app or website and by accepting my cookies",
+    imageUrl: 'ccm-v3-icon-2.svg'
   },
   {
     number: "3.",
-    title: "Je récupère mon argent !",
-    description: "Dès 20€ cumulés je récupère mon argent via virement bancaire, PayPal ou chèques-cadeaux",
-    icon: HandCoins,
+    title: "I'm getting my money back!",
+    description: "Once I have accumulated €20, I can get my money back via bank transfer or PayPal",
+    imageUrl: 'ccm-v3-icon-3.svg'
   },
 ]
 
 export function CashbackHowItWorks() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-8 md:py-12 bg-white">
+      <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-balance">
           How does the Wiqi cashback works ?
         </h2>
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 md:gap-12">
           {steps.map((step, index) => {
-            const Icon = step.icon
             return (
               <div key={index} className="relative">
                 <div className="flex flex-col items-center text-center">
-                  {/* Icon */}
                   <div className="mb-6">
-                    <Icon className="w-16 h-16 text-primary stroke-[1.5]" />
+                    <Image src={step.imageUrl} alt="icon" width={60} height={60} />
                   </div>
 
                   <div className="text-5xl font-bold text-primary mb-4">{step.number}</div>
