@@ -14,7 +14,7 @@ export function Partners() {
         <p className="mb-6 text-center font-bold text-2xl tracking-wider">
           Most visited top based USA partner merchants
         </p>
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-[repeat(auto-fit,minmax(0,1fr))]">
           {partners.map((partner) => (
             <div
               key={partner.name}

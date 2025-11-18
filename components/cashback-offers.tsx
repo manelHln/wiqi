@@ -19,26 +19,26 @@ export default function CashbackOffers() {
     'Et aussi': [
       {
         id: 1,
-        logo: 'meetic',
+        logo: 'Amazon',
         cashback: { value: '33', suffix: '%' },
         extraInfo: 'instead of 10€',
         sponsored: true
       },
       {
         id: 2,
-        logo: 'norton',
+        logo: 'Costco',
         cashback: { value: '8,3', suffix: '%' },
         sponsored: true
       },
       {
         id: 4,
-        logo: 'OSCARD',
+        logo: 'Temu',
         cashback: { value: '1,8', suffix: '%' },
         sponsored: true
       },
       {
         id: 5,
-        logo: 'prismaSHOP',
+        logo: 'Zulilly',
         cashback: { value: '7', suffix: '€' },
         extraInfo: 'instead of 5€',
         sponsored: true,
@@ -46,7 +46,7 @@ export default function CashbackOffers() {
       },
       {
         id: 6,
-        logo: 'vistaprint',
+        logo: 'Newegg',
         cashback: { value: '4,5', suffix: '%' },
         extraInfo: 'instead of 3,25%',
         sponsored: true,

@@ -10,29 +10,29 @@ const faqs = [
       "Cashback is a rewards program that lets you get back a portion of the money spent on your online purchases. It is a delayed discount that is returned to you after your purchase is confirmed.",
   },
   {
-    question: "How does cashback work between iGraal and merchant sites?",
+    question: "How does cashback work between Wiqi and merchant sites?",
     answer:
-      "iGraal negotiates commissions with partner merchants. When you make a purchase through iGraal, we receive a commission which we share with you as cashback.",
+      "Wiqi negotiates commissions with partner merchants. When you make a purchase through Wiqi, we receive a commission which we share with you as cashback.",
   },
   {
-    question: "How does iGraal's cashback service work?",
+    question: "How does Wiqi's cashback service work?",
     answer:
       "Sign up for free, enable cashback for the merchant of your choice via our website or browser extension, and then shop as usual. Cashback is automatically credited to your account after the purchase is validated.",
   },
   {
-    question: "Are iGraal's negotiated cashback offers free?",
+    question: "Are Wiqi's negotiated cashback offers free?",
     answer:
-      "Yes — signing up and using iGraal is completely free. You never pay fees to receive cashback on your purchases.",
+      "Yes — signing up and using Wiqi is completely free. You never pay fees to receive cashback on your purchases.",
   },
   {
-    question: "How do I sign up and take advantage of iGraal promotions?",
+    question: "How do I sign up and take advantage of Wiqi promotions?",
     answer:
       "Signing up is quick: create an account with your email, install the Chrome extension to enable cashback automatically, and start shopping with over 1,500 partner merchants.",
   },
   {
     question: "How do I activate cashback when shopping online?",
     answer:
-      "With the iGraal extension installed, cashback activates automatically when you visit a partner site. You can also activate cashback manually on our website before checking out.",
+      "With the Wiqi extension installed, cashback activates automatically when you visit a partner site. You can also activate cashback manually on our website before checking out.",
   },
 ];
 

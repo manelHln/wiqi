@@ -2,9 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Bed, Bath, Square, Heart, MapPin, Star } from "lucide-react";
-import { useState } from "react";
 
 interface PropertyCardProps {
   image: string;

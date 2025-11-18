@@ -19,7 +19,7 @@ const CashbackCard = ({ logo, cashback, extraInfo, sponsored, delay = 0 }: Cashb
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4, delay }}
-      className="bg-white rounded-3xl overflow-hidden shadow-sm"
+      className="bg-white rounded-3xl overflow-hidden shadow-sm cursor-pointer hover:shadow-lg"
     >
       <div className="h-28 flex items-center justify-center border-b border-gray-200">
         <div className="text-2xl font-bold text-secondary">{logo}</div>
