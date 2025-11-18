@@ -5,18 +5,18 @@ import { Button } from "./ui/button";
 
 const properties = [
   {
-    image: "/placeholder.svg?key=feat3",
-    title: "Jusqu'à 100€ reversés en cash* sur votre 1er pari",
-    cashback: "+ 60€ de cashback",
+    image: "/amazon.png",
+    title: "Up to $100 cash back* on your first purchase",
+    cashback: "+ 60$ of cashback",
   },
   {
-    image: "/placeholder.svg?key=feat4",
-    title: "-15% sur une sélection de moniteurs Gaming Odyssey",
-    cashback: "+ 3,5% de cashback",
+    image: "/costco.png",
+    title: "15% off selected Odyssey gaming monitors",
+    cashback: "+ 3,5% of cashback",
   },
   {
-    image: "/placeholder.svg?key=feat5",
-    title: "-22% pour plus de 200€ d'achat",
+    image: "/temu.png",
+    title: "22% off purchases over $200",
     cashback: "+ 10% de cashback ",
   },
 ];
