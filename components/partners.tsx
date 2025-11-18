@@ -1,34 +1,38 @@
+import Image from "next/image";
+
 export function Partners() {
   const partners = [
-    { name: "Zillow", logo: "Zillow" },
-    { name: "Redfin", logo: "Redfin" },
-    { name: "Realtor", logo: "Realtor" },
-    { name: "Trulia", logo: "Trulia" },
-    { name: "Compass", logo: "Compass" },
-    { name: "Coldwell", logo: "Coldwell" },
-    { name: "Century 21", logo: "Century 21" },
-    { name: "RE/MAX", logo: "RE/MAX" },
-  ]
+    { name: "Costco", logo: "/costco.png" },
+    { name: "Amazon", logo: "/amazon.png" },
+    { name: "Temu", logo: "/temu.png" },
+    { name: "Blue Apron", logo: "/blueapron.png" },
+  ];
 
   return (
-    <section className="py-12">
+    <section className="py-12 bg-white">
       <div className="container mx-auto px-6">
-        <p className="mb-8 text-center text-sm font-medium uppercase tracking-wide text-muted-foreground">
-          More than 150+ partner merchants
+        <p className="mb-6 text-center font-bold text-2xl tracking-wider">
+          Most visited top based USA partner merchants
         </p>
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:grid-cols-8">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="flex items-center justify-center grayscale transition-all hover:grayscale-0"
+              className="flex items-center justify-center transition-all"
             >
-              <div className="text-center text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground">
-                {partner.logo}
+              <div className="shrink-0 mx-8">
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={120}
+                  height={60}
+                  className="h-12 w-auto object-contain transition-all"
+                />
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

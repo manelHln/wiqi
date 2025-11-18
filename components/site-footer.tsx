@@ -62,27 +62,22 @@ export function SiteFooter() {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link href="#" className="text-secondary transition-colors hover:text-foreground">
-                  About Us
+                  About Wiqi
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-secondary transition-colors hover:text-foreground">
-                  Properties for Rent
+                  How does it work?
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-secondary transition-colors hover:text-foreground">
-                  Properties for Sale
+                  Wiqi Extension
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-secondary transition-colors hover:text-foreground">
-                  Find an Agent
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-secondary transition-colors hover:text-foreground">
-                  List Your Property
+                  All Merchants
                 </Link>
               </li>
             </ul>

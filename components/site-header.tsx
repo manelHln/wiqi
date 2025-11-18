@@ -6,6 +6,7 @@ import { Menu, Search, User, X } from "lucide-react";
 import Link from "next/link";
 import { Input } from "./ui/input";
 import Image from "next/image";
+import LoginDrawer from "./login-drawer";
 
 export function SiteHeader() {
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState<boolean>(false);
@@ -64,9 +65,7 @@ export function SiteHeader() {
                   <Search className="size-5" />
                 </Button>
               </Activity>
-              <Button variant="ghost" size="icon">
-                <User className="size-5" />
-              </Button>
+              <LoginDrawer />
             </div>
           </div>
 
@@ -92,10 +91,10 @@ export function SiteHeader() {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" className="text-sm">
-              Login
+            <LoginDrawer />
+            <Button className="text-sm rounded-3xl cursor-pointer">
+              <Link href='/auth/register'>Register</Link>
             </Button>
-            <Button className="text-sm rounded-3xl">Register</Button>
           </div>
         </div>
       </header>

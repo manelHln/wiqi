@@ -43,7 +43,7 @@ export function Statistics() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <p className="mb-2 text-3xl font-bold text-primary md:text-4xl">
-              <Counter value={12000000} duration={2.5} />
+              <Counter value={1000} duration={2.5} />
             </p>
             <p className="text-secondary text-xs">
               people are already using it!
@@ -58,8 +58,8 @@ export function Statistics() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <p className="mb-2 text-3xl font-bold text-primary md:text-4xl">
-              <span className="text-sm">+DE</span> <Counter value={100} duration={2} />
-              M$
+              <span className="text-sm">+DE</span> <Counter value={20} duration={2} />
+              K$
             </p>
             <p className="text-secondary text-xs">
               in cashback paid out to our members
@@ -74,7 +74,7 @@ export function Statistics() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <p className="mb-2 text-3xl font-bold text-primary md:text-4xl">
-              <Counter value={1527} duration={2} />
+              <Counter value={1500} duration={2} />
             </p>
             <p className="text-secondary text-xs">partner merchants</p>
           </motion.div>

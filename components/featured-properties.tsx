@@ -25,7 +25,7 @@ export function FeaturedProperties() {
   return (
     <section className="bg-white pb-8">
       <div className="max-w-7xl bg-primary/20 mx-auto px-6 sm:px-24 py-6 md:py-20 sm:rounded-2xl">
-        <h2 className="mb-8 text-center text-lg font-bold text-secondary md:text-xl">
+        <h2 className="mb-8 text-center text-xl font-bold text-secondary md:text-3xl">
           Be smart, save more by combining discounts with cashback and promo codes!
         </h2>
 
@@ -39,10 +39,10 @@ export function FeaturedProperties() {
             </div>
           ))}
         </div>
-        <h3 className="text-secondary text-center text-xl my-12 font-bold">
+        <h3 className="text-secondary text-center text-xl mt-12 mb-8 font-bold">
           Want more discounts with promo codes from your favorite retailers?
         </h3>
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-5 ">
+        {/* <div className="grid grid-cols-2 gap-6 md:grid-cols-5 ">
           <ul className="flex flex-col gap-1">
             <li className="text-secondary font-medium">
               <a
@@ -422,8 +422,8 @@ export function FeaturedProperties() {
             </li>
             
           </ul>
-        </div>
-        <div className="flex w-full justify-center mt-6">
+        </div> */}
+        <div className="flex w-full justify-center">
           <Button className="bg-primary rounded-3xl text-white font-semibold text-lg tracking-widest cursor-pointer">
             Tous les codes promo
           </Button>

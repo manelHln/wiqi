@@ -23,8 +23,8 @@ export function HeroSection() {
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           {/* Left side - Hero content and search */}
           <div>
-            <h1 className="mb-4 text-balance text-4xl font-medium text-foreground md:text-5xl lg:text-6xl">
-              Save effortlessly on every online purchase
+            <h1 className="mb-4 text-balance text-2xl font-medium text-secondary md:text-3xl lg:text-3xl">
+              Shop online, earn money. It's that simple to put cashback in your pocket.
             </h1>
             {/* <Button className="bg-primary rounded-3xl py-6 px-9 text-xl">
               Register - 10$ gifted*

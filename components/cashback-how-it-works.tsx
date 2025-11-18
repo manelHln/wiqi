@@ -23,7 +23,7 @@ const steps = [
 
 export function CashbackHowItWorks() {
   return (
-    <section className="py-8 md:py-12 bg-white">
+    <section className="py-8 md:py-16 bg-white">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-balance">
           How does the Wiqi cashback works ?

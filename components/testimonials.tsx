@@ -6,24 +6,24 @@ export function Testimonials() {
   const testimonials = [
     {
       name: "Sarah Johnson",
-      role: "Property Renter",
+      role: "Verified Shopper",
       avatar: "/professional-woman-headshot.png",
       rating: 5,
-      text: "Found my dream apartment in just two days! The platform is incredibly easy to use and all listings were verified. Highly recommend!",
+      text: "I earned $76 back on a pair of noise-cancelling headphones I was already planning to buy. The cashback came through faster than expected!",
     },
     {
       name: "Michael Chen",
-      role: "Property Owner",
+      role: "Frequent Buyer",
       avatar: "/professional-man-headshot.png",
       rating: 5,
-      text: "As a property owner, this platform has made renting so much easier. Great tenant matching and seamless payment processing.",
+      text: "Got $33in rewards after booking my weekend getaway. I honestly didn’t expect to save that much—this platform keeps surprising me.",
     },
     {
       name: "Emily Rodriguez",
-      role: "First-Time Renter",
+      role: "New User",
       avatar: "/young-professional-woman-headshot.png",
       rating: 5,
-      text: "The virtual tours and detailed information helped me make an informed decision. Customer support was outstanding throughout the process.",
+      text: "I earned $20 on a home-office chair purchase. Super smooth process and great customer support. Definitely sticking with this service!",
     },
   ];
 
@@ -43,7 +43,7 @@ export function Testimonials() {
             <Card key={index} className="transition-shadow hover:shadow-lg">
               <CardContent className="py-2 px-6">
                 <div className="flex justify-center items-center mb-4">
-                <Quote fill="#3da975" className="text-primary" />
+                  <Quote fill="#3da975" className="text-primary" />
                 </div>
                 <p className="mb-4 text-secondary text-center">
                   "{testimonial.text}"
@@ -56,7 +56,7 @@ export function Testimonials() {
           ))}
         </div>
         <div className="w-full flex justify-center pt-10">
-        <Button className="rounded-3xl" >See all the testimonials</Button>
+          <Button className="rounded-3xl">See all the testimonials</Button>
         </div>
       </div>
     </section>
