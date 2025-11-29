@@ -247,7 +247,7 @@ export default function AvisPage() {
 
       {/* Review Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent>
+        <DialogContent className="bg-white">
           <DialogHeader>
             <DialogTitle>Write a Review</DialogTitle>
             <DialogDescription>

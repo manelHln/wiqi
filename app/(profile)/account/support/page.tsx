@@ -322,7 +322,7 @@ export default function ServiceClientPage() {
 
       {/* Create Ticket Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent>
+        <DialogContent className="bg-white">
           <DialogHeader>
             <DialogTitle>Contact Customer Support</DialogTitle>
             <DialogDescription>

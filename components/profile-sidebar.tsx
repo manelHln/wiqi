@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   CircleUserRound,
@@ -11,7 +11,7 @@ import {
   MessageSquare,
   Power,
   CreditCard,
-  MailQuestion, 
+  MailQuestion,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -40,15 +40,22 @@ export default function ProfileSidebar() {
   return (
     <ul className="hidden md:flex flex-col gap-3">
       {menuItems.map((item) => (
-        <li key={item.label} className={cn("px-2 py-2 rounded-md cursor-pointer hover:bg-primary hover:text-white transition-all", pathname === item.href && "bg-primary text-white")}>
-          <Link
+        <Link
+          key={item.label}
+          className={cn(
+            "flex items-center gap-2 px-2 py-2 rounded-md cursor-pointer hover:bg-primary hover:text-white transition-all",
+            pathname === item.href && "bg-primary text-white"
+          )}
+          href={item.href}
+        >
+          {/* <Link
             href={item.href}
             className="flex items-center gap-2"
-          >
-            <item.icon className="size-5" />
-            {item.label}
-          </Link>
-        </li>
+          > */}
+          <item.icon className="size-5" />
+          {item.label}
+          {/* </Link> */}
+        </Link>
       ))}
     </ul>
   );

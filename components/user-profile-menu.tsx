@@ -58,7 +58,7 @@ const menuItems = [
   },
   { icon: Bell, label: "My notifications", href: "/account/notifications" },
   { icon: MessageSquare, label: "Customer service", href: "/account/support" },
-  { icon: MailQuestion, label: "FAQ", href: "/account/faq" },
+  { icon: MailQuestion, label: "FAQ", href: "/account/faqs" },
   { icon: Power, label: "Logout", href: "/account/logout" },
 ];
 
@@ -141,6 +141,7 @@ const UserProfileMobile = () => {
               href={item.href}
               key={item.label}
               className="flex items-center gap-2"
+              onClick={() => setOpen(false)}
             >
               <item.icon className="size-5 hover:text-white" />
               {item.label}
