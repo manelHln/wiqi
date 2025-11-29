@@ -16,7 +16,7 @@
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.94 0.001 0);
   --muted-foreground: oklch(0.55 0 0);
-  --accent: oklch(0.62 0.15 80); /* Warm accent */
+  --accent: #3da975; /* Warm accent */
   --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
@@ -52,7 +52,7 @@
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.27 0 0);
   --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.68 0.18 80);
+  --accent: #3da975;
   --accent-foreground: oklch(0.15 0 0);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
@@ -121,6 +121,9 @@
   }
   body {
     @apply tracking-wide bg-background text-secondary;
+  }
+  button {
+    @apply cursor-pointer;
   }
 }
 

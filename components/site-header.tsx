@@ -2,11 +2,12 @@
 
 import { useState, Activity } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, Search, User, X } from "lucide-react";
+import { Menu, Search, X } from "lucide-react";
 import Link from "next/link";
 import { Input } from "./ui/input";
 import Image from "next/image";
 import LoginDrawer from "./login-drawer";
+import UserProfileMenu from "./user-profile-menu";
 
 export function SiteHeader() {
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState<boolean>(false);
@@ -29,13 +30,17 @@ export function SiteHeader() {
             {isMobileSearchOpen ? (
               <div className="border-t border-border bg-background px-6 py-3 md:hidden">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-muted-foreground" />
+                  <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-secondary/70" />
                   <Input
                     placeholder="Search"
                     className="pl-10 rounded-3xl"
                     autoFocus
                   />
-                  <Button variant="ghost" className="bg-gray-200 h-8 w-8 p-2 flex justify-center items-center absolute right-3 top-1/2 size-5 -translate-y-1/2 rounded-full" onClick={() => setIsMobileSearchOpen(false)}>
+                  <Button
+                    variant="ghost"
+                    className="bg-gray-200 h-8 w-8 p-2 flex justify-center items-center absolute right-3 top-1/2 size-5 -translate-y-1/2 rounded-full"
+                    onClick={() => setIsMobileSearchOpen(false)}
+                  >
                     <X className="h-4 w-4" />
                   </Button>
                 </div>
@@ -65,36 +70,34 @@ export function SiteHeader() {
                   <Search className="size-5" />
                 </Button>
               </Activity>
-              <LoginDrawer />
+              <UserProfileMenu />
             </div>
           </div>
 
           {/* Desktop Layout */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/shopping-bag.png"
-                alt="Wiqi Logo"
-                width={26}
-                height={26}
-              />
-              <span className="ml-1 font-bold text-2xl text-secondary">Wi</span>
-              <span className="font-bold text-2xl text-primary">qi</span>
-            </Link>
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-muted-foreground" />
-              <Input
-                placeholder="Search"
-                className="pl-10 min-w-lg rounded-3xl"
-              />
+          <div className="hidden md:flex w-full justify-between items-center gap-8">
+            <div className="flex items-center gap-8">
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/shopping-bag.png"
+                  alt="Wiqi Logo"
+                  width={26}
+                  height={26}
+                />
+                <span className="ml-1 font-bold text-2xl text-secondary">
+                  Wi
+                </span>
+                <span className="font-bold text-2xl text-primary">qi</span>
+              </Link>
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-secondary/70" />
+                <Input
+                  placeholder="Search"
+                  className="pl-10 min-w-lg rounded-3xl"
+                />
+              </div>
             </div>
-          </div>
-
-          <div className="hidden md:flex items-center gap-4">
-            <LoginDrawer />
-            <Button className="text-sm rounded-3xl cursor-pointer">
-              <Link href='/auth/register'>Register</Link>
-            </Button>
+            <UserProfileMenu />
           </div>
         </div>
       </header>
@@ -105,42 +108,38 @@ export function SiteHeader() {
           <nav className="flex items-center gap-6">
             <Link
               href="#"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm font-medium text-secondary/70 transition-colors hover:text-foreground"
             >
               Cashback
             </Link>
             <Link
               href="#"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm font-medium text-secondary/70 transition-colors hover:text-foreground"
             >
               Top codes promo
             </Link>
             <Link
               href="#"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm font-medium text-secondary/70 transition-colors hover:text-foreground"
             >
               Gift vouchers
             </Link>
             <Link
               href="#"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm font-medium text-secondary/70 transition-colors hover:text-foreground"
             >
               Today's selections
             </Link>
             <Link
               href="#"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm font-medium text-secondary/70 transition-colors hover:text-foreground"
             >
               Printable coupons
             </Link>
-            <Button className="text-sm rounded-3xl">
-              <Link href="#">Black November</Link>
-            </Button>
           </nav>
         </div>
       </div>
 
-      {/* Mobile Sidebar Menu */}
       {isMobileMenuOpen && (
         <>
           {/* Overlay */}
@@ -176,37 +175,34 @@ export function SiteHeader() {
             <nav className="flex flex-col gap-1 p-4">
               <Link
                 href="#"
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                className="rounded-md px-3 py-2 text-sm font-medium text-secondary/70 transition-colors hover:bg-accent hover:text-foreground"
               >
                 Cashback
               </Link>
               <Link
                 href="#"
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                className="rounded-md px-3 py-2 text-sm font-medium text-secondary/70 transition-colors hover:bg-accent hover:text-foreground"
               >
                 Top codes promo
               </Link>
               <Link
                 href="#"
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                className="rounded-md px-3 py-2 text-sm font-medium text-secondary/70 transition-colors hover:bg-accent hover:text-foreground"
               >
                 Bons d'achat
               </Link>
               <Link
                 href="#"
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                className="rounded-md px-3 py-2 text-sm font-medium text-secondary/70 transition-colors hover:bg-accent hover:text-foreground"
               >
                 Sélections du jour
               </Link>
               <Link
                 href="#"
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                className="rounded-md px-3 py-2 text-sm font-medium text-secondary/70 transition-colors hover:bg-accent hover:text-foreground"
               >
                 Coupons á imprimer
               </Link>
-              <Button className="mt-4 text-sm rounded-3xl">
-                <Link href="#">Black November</Link>
-              </Button>
             </nav>
           </div>
         </>

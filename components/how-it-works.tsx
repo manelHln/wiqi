@@ -1,4 +1,4 @@
-import { Search, FileText, Key } from "lucide-react"
+import { Search, FileText, Key } from "lucide-react";
 
 const steps = [
   {
@@ -12,23 +12,27 @@ const steps = [
     icon: FileText,
     step: "02",
     title: "Schedule a Visit",
-    description: "Book a viewing at your convenience and explore the property with our experienced agents.",
+    description:
+      "Book a viewing at your convenience and explore the property with our experienced agents.",
   },
   {
     icon: Key,
     step: "03",
     title: "Move In",
-    description: "Complete the paperwork, sign the agreement, and get the keys to your new home hassle-free.",
+    description:
+      "Complete the paperwork, sign the agreement, and get the keys to your new home hassle-free.",
   },
-]
+];
 
 export function HowItWorks() {
   return (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-balance text-3xl font-bold text-foreground md:text-4xl">How It Works</h2>
-          <p className="text-pretty text-muted-foreground">
+          <h2 className="mb-4 text-balance text-3xl font-bold text-foreground md:text-4xl">
+            How It Works
+          </h2>
+          <p className="text-pretty text-secondary/70">
             Finding your dream property is easy with our simple 3-step process
           </p>
         </div>
@@ -44,12 +48,16 @@ export function HowItWorks() {
                   {step.step}
                 </div>
               </div>
-              <h3 className="mb-3 text-xl font-semibold text-foreground">{step.title}</h3>
-              <p className="text-pretty text-muted-foreground">{step.description}</p>
+              <h3 className="mb-3 text-xl font-semibold text-foreground">
+                {step.title}
+              </h3>
+              <p className="text-pretty text-secondary/70">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

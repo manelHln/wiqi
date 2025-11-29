@@ -127,12 +127,6 @@ export function LoginForm({ onSuccess }: { onSuccess?: () => void }) {
                 className="w-full h-12 px-3 pr-10 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 {...register("password", {
                   required: "Password is required",
-                  pattern: {
-                    value:
-                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-                    message:
-                      "Password must be 8+ chars, include uppercase, lowercase, number & special character"
-                  }
                 })}
               />
               <button

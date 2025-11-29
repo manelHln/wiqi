@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { LoginForm } from "./login-form"
 import { useIsMobile } from "@/hooks/use-mobile"
-import { User } from "lucide-react"
+import { CircleUserRound } from "lucide-react"
 
 export default function LoginDrawer() {
   const [open, setOpen] = React.useState(false)
@@ -22,7 +22,7 @@ export default function LoginDrawer() {
     <Drawer open={open} onOpenChange={setOpen} direction="right">
       <DrawerTrigger asChild>
         {
-          isMobile ? (<Button variant="ghost" size='icon' className="text-sm hover:bg-gray-100 hover:text-secondary cursor-pointer"><User className="size-5" /></Button>):(<Button variant="ghost" className="text-sm hover:bg-gray-100 hover:text-secondary cursor-pointer">Login</Button>)
+          isMobile ? (<Button variant="ghost" size='icon' className="text-sm hover:bg-gray-100 hover:text-secondary cursor-pointer"><CircleUserRound className="size-5" /></Button>):(<Button variant="ghost" className="text-sm hover:bg-gray-100 hover:text-secondary cursor-pointer">Login</Button>)
         }
       </DrawerTrigger>
       <DrawerContent className="p-4 md:p-8 bg-white rounded-tl-2xl rounded-bl-2xl">

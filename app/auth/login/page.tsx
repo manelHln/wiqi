@@ -4,21 +4,20 @@ import { Eye, EyeOff } from "lucide-react"
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"
+import toast from "react-hot-toast"
+import { useRouter } from "next/navigation"
 
-import { handleGoogleLogin, handleRegisterWithPassword } from "@/lib/supabase"
+import { handleGoogleLogin, handleLoginWithPassword } from "@/lib/supabase"
 
 type Inputs = {
-  firstName: string
-  lastName: string
   email: string
   password: string
-  gender: string
 }
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false)
   const [loadingGoogleInvite, setLoadingGoogleInvite] = useState(false)
-  const [toast, setToast] = useState(null)
+  const router = useRouter()
   
   const {
     register,
@@ -26,24 +25,26 @@ export default function Register() {
     formState: { errors, isSubmitting }
   } = useForm<Inputs>()
 
-  const showToast = (message, type) => {
-    setToast({ message, type })
-    setTimeout(() => setToast(null), 3000)
-  }
-
   const onSubmit: SubmitHandler<Inputs> = async (inputs) => {
     try {
-      const { data, error } = await handleRegisterWithPassword(inputs)
+      const { data, error } = await handleLoginWithPassword(inputs)
       
       if (error) {
-        showToast(error.message, "error")
+        toast.error(error.message)
       } else {
-        showToast("Welcome!", "success")
+        toast.success("Welcome!")
+        // redirect if needed url?redirect=/some/link
+        let paramsString = window.location.search
+        let searchParams = new URLSearchParams(paramsString)
+        let redirect = searchParams.get("redirect")
+        if (redirect) {
+          router.push(redirect)
+        } else {
+          router.push("/")
+        }
       }
-      
-      showToast("Welcome!", "success")
     } catch (error) {
-      showToast("Registration failed", "error")
+      toast.error("Registration failed")
     }
   }
 
@@ -57,22 +58,13 @@ export default function Register() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      {/* Toast Notification */}
-      {toast && (
-        <div className={`fixed top-4 left-1/2 -translate-x-1/2 px-6 py-3 rounded-lg shadow-lg z-50 ${
-          toast.type === "success" ? "bg-green-500" : "bg-red-500"
-        } text-white`}>
-          {toast.message}
-        </div>
-      )}
-
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-sm">
         {/* Welcome Text */}
         <h1 className="text-2xl font-semibold text-center text-gray-900 mb-2">
-          Register
+          Login
         </h1>
         <p className="text-center text-gray-500 mb-8">
-          Please enter your details to register.
+          Please enter your details to login.
         </p>
 
         {/* Social Login Buttons */}
@@ -117,47 +109,6 @@ export default function Register() {
         </div>
 
         <div>
-          {/* First Name and Last Name Row */}
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-900 mb-2">
-                First Name
-              </label>
-              <input
-                type="text"
-                placeholder="First name"
-                className="w-full h-12 px-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                {...register("firstName", {
-                  required: "First name is required"
-                })}
-              />
-              {errors.firstName && (
-                <p role="alert" className="text-red-600 text-sm mt-1">
-                  {errors.firstName.message}
-                </p>
-              )}
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-900 mb-2">
-                Last Name
-              </label>
-              <input
-                type="text"
-                placeholder="Last name"
-                className="w-full h-12 px-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                {...register("lastName", {
-                  required: "Last name is required"
-                })}
-              />
-              {errors.lastName && (
-                <p role="alert" className="text-red-600 text-sm mt-1">
-                  {errors.lastName.message}
-                </p>
-              )}
-            </div>
-          </div>
-
           {/* Email Input */}
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-900 mb-2">
@@ -220,29 +171,6 @@ export default function Register() {
             )}
           </div>
 
-          {/* Gender Select */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-900 mb-2">
-              Gender
-            </label>
-            <select
-              className="w-full h-12 px-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
-              {...register("gender", {
-                required: "Please select a gender"
-              })}>
-              <option value="">Select gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-              <option value="prefer-not-to-say">Prefer not to say</option>
-            </select>
-            {errors.gender && (
-              <p role="alert" className="text-red-600 text-sm mt-1">
-                {errors.gender.message}
-              </p>
-            )}
-          </div>
-
           {/* Register Button */}
           <button
             onClick={handleSubmit(onSubmit)}
@@ -251,17 +179,17 @@ export default function Register() {
             {isSubmitting ? (
               <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mx-auto"></div>
             ) : (
-              "Register"
+              "Login"
             )}
           </button>
 
           {/* Login Link */}
           <p className="text-center text-sm text-gray-600">
-            Already have an account?{" "}
+            Don't have an account?{" "}
             <a
-              href="/login"
+              href="/auth/register"
               className="font-semibold text-gray-900 hover:underline">
-              Login
+              Register
             </a>
           </p>
         </div>

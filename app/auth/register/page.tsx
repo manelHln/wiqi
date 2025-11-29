@@ -2,9 +2,19 @@
 
 import { Eye, EyeOff } from "lucide-react"
 import React, { useState } from "react"
-import { useForm } from "react-hook-form"
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { useForm, Controller } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"
 import toast from 'react-hot-toast'
+import { useRouter } from "next/navigation"
 
 import { handleGoogleLogin, handleRegisterWithPassword } from "@/lib/supabase"
 
@@ -17,12 +27,14 @@ type Inputs = {
 }
 
 export default function Register() {
+  const router = useRouter()
   const [showPassword, setShowPassword] = useState(false)
   const [loadingGoogleInvite, setLoadingGoogleInvite] = useState(false)
   
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors, isSubmitting }
   } = useForm<Inputs>()
 
@@ -34,9 +46,8 @@ export default function Register() {
         toast.error(error.message || "error")
       } else {
         toast.success("Welcome!")
+        router.push("/")
       }
-      
-      toast.success("Welcome!")
     } catch (error) {
       toast.error("Registration failed")
     }
@@ -51,7 +62,7 @@ export default function Register() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-sm">
         {/* Welcome Text */}
         <h1 className="text-2xl font-semibold text-center text-gray-900 mb-2">
@@ -211,17 +222,43 @@ export default function Register() {
             <label className="block text-sm font-medium text-secondary mb-2">
               Gender
             </label>
-            <select
-              className="w-full h-12 px-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+            {/* <Select
               {...register("gender", {
                 required: "Please select a gender"
-              })}>
-              <option value="">Select gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-              <option value="prefer-not-to-say">Prefer not to say</option>
-            </select>
+              })}
+              >
+              <SelectTrigger>
+                <SelectValue placeholder="Select gender" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectItem value="male">Male</SelectItem>
+                  <SelectItem value="female">Female</SelectItem>
+                  <SelectItem value="other">Other</SelectItem>
+                  <SelectItem value="prefer-not-to-say">Prefer not to say</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select> */}
+            <Controller
+              name="gender"
+              control={control}
+              rules={{ required: "Please select a gender" }}
+              render={({ field }) => (
+                <Select onValueChange={field.onChange} value={field.value}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select gender" />
+                  </SelectTrigger>
+                  <SelectContent>
+        <SelectGroup>
+          <SelectItem value="male">Male</SelectItem>
+          <SelectItem value="female">Female</SelectItem>
+          <SelectItem value="other">Other</SelectItem>
+          <SelectItem value="prefer-not-to-say">Prefer not to say</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+  )}
+/>
             {errors.gender && (
               <p role="alert" className="text-red-600 text-sm mt-1">
                 {errors.gender.message}

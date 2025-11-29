@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { PropertyCard } from "./property-card"
-import { Button } from "./ui/button"
-import { useState } from "react"
+import { PropertyCard } from "./property-card";
+import { Button } from "./ui/button";
+import { useState } from "react";
 
 const allListings = [
   {
@@ -97,27 +97,33 @@ const allListings = [
     type: "house",
     rating: 4.9,
   },
-]
+];
 
 const filterOptions = [
   { label: "All Properties", value: "all" },
   { label: "Apartments", value: "apartment" },
   { label: "Houses", value: "house" },
   { label: "Condos", value: "condo" },
-]
+];
 
 export function RecentListings() {
-  const [activeFilter, setActiveFilter] = useState("all")
+  const [activeFilter, setActiveFilter] = useState("all");
 
   const filteredListings =
-    activeFilter === "all" ? allListings : allListings.filter((listing) => listing.type === activeFilter)
+    activeFilter === "all"
+      ? allListings
+      : allListings.filter((listing) => listing.type === activeFilter);
 
   return (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-balance text-3xl font-bold text-foreground md:text-4xl">Recent Listings</h2>
-          <p className="text-pretty text-muted-foreground">Discover the latest properties added to our marketplace</p>
+          <h2 className="mb-4 text-balance text-3xl font-bold text-foreground md:text-4xl">
+            Recent Listings
+          </h2>
+          <p className="text-pretty text-secondary/70">
+            Discover the latest properties added to our marketplace
+          </p>
         </div>
 
         <div className="mb-8 flex flex-wrap justify-center gap-2">
@@ -144,5 +150,5 @@ export function RecentListings() {
         </div>
       </div>
     </section>
-  )
+  );
 }

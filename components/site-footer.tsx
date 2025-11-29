@@ -1,20 +1,27 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
-import { Input } from "./ui/input"
-import { Button } from "./ui/button"
-import { useState } from "react"
-import Image from "next/image"
+import Link from "next/link";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import { useState } from "react";
+import Image from "next/image";
 
 export function SiteFooter() {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
 
   return (
     <footer className="pt-12 px-6">
       <div className="container bg-white mx-auto px-10 py-12 md:py-16 shadow-sm rounded-2xl">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-
           <div>
             <Link href="/" className="flex items-center">
               <Image
@@ -26,31 +33,31 @@ export function SiteFooter() {
               <span className="ml-1 font-bold text-2xl text-secondary">Wi</span>
               <span className="font-bold text-2xl text-primary">qi</span>
             </Link>
-            <p className="my-6 text-sm text-muted-foreground">
+            <p className="my-6 text-sm text-secondary/70">
               Earn money while shopping online.
             </p>
             <div className="flex gap-3">
               <Link
                 href="#"
-                className="flex size-9 items-center justify-center rounded-full bg-card text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                className="flex size-9 items-center justify-center rounded-full bg-card text-secondary/70 transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 <Facebook className="size-4" />
               </Link>
               <Link
                 href="#"
-                className="flex size-9 items-center justify-center rounded-full bg-card text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                className="flex size-9 items-center justify-center rounded-full bg-card text-secondary/70 transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 <Twitter className="size-4" />
               </Link>
               <Link
                 href="#"
-                className="flex size-9 items-center justify-center rounded-full bg-card text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                className="flex size-9 items-center justify-center rounded-full bg-card text-secondary/70 transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 <Instagram className="size-4" />
               </Link>
               <Link
                 href="#"
-                className="flex size-9 items-center justify-center rounded-full bg-card text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                className="flex size-9 items-center justify-center rounded-full bg-card text-secondary/70 transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 <Linkedin className="size-4" />
               </Link>
@@ -58,25 +65,39 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-secondary">Quick Links</h3>
+            <h3 className="mb-4 text-sm font-semibold text-secondary">
+              Quick Links
+            </h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="#" className="text-secondary transition-colors hover:text-foreground">
+                <Link
+                  href="#"
+                  className="text-secondary transition-colors hover:text-foreground"
+                >
                   About Wiqi
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-secondary transition-colors hover:text-foreground">
+                <Link
+                  href="#"
+                  className="text-secondary transition-colors hover:text-foreground"
+                >
                   How does it work?
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-secondary transition-colors hover:text-foreground">
+                <Link
+                  href="#"
+                  className="text-secondary transition-colors hover:text-foreground"
+                >
                   Wiqi Extension
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-secondary transition-colors hover:text-foreground">
+                <Link
+                  href="#"
+                  className="text-secondary transition-colors hover:text-foreground"
+                >
                   All Merchants
                 </Link>
               </li>
@@ -84,30 +105,47 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-secondary">Resources</h3>
+            <h3 className="mb-4 text-sm font-semibold text-secondary">
+              Resources
+            </h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="#" className="text-secondary transition-colors hover:text-foreground">
+                <Link
+                  href="#"
+                  className="text-secondary transition-colors hover:text-foreground"
+                >
                   Help Center
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-secondary transition-colors hover:text-foreground">
+                <Link
+                  href="#"
+                  className="text-secondary transition-colors hover:text-foreground"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-secondary transition-colors hover:text-foreground">
+                <Link
+                  href="#"
+                  className="text-secondary transition-colors hover:text-foreground"
+                >
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-secondary transition-colors hover:text-foreground">
+                <Link
+                  href="#"
+                  className="text-secondary transition-colors hover:text-foreground"
+                >
                   FAQs
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-secondary transition-colors hover:text-foreground">
+                <Link
+                  href="#"
+                  className="text-secondary transition-colors hover:text-foreground"
+                >
                   Sitemap
                 </Link>
               </li>
@@ -115,7 +153,9 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-secondary">Contact Us</h3>
+            <h3 className="mb-4 text-sm font-semibold text-secondary">
+              Contact Us
+            </h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2 text-secondary">
                 <MapPin className="mt-0.5 size-4 shrink-0" />
@@ -151,8 +191,7 @@ export function SiteFooter() {
             </div> */}
           </div>
         </div>
-
       </div>
     </footer>
-  )
+  );
 }
