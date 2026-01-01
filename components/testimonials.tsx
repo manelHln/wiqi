@@ -31,10 +31,10 @@ export function Testimonials() {
     <section className="py-12 md:py-12">
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-balance text-xl sm:text-3xl font-bold text-secondary md:text-4xl">
+          <h2 className="mb-4 text-balance text-xl sm:text-3xl font-bold text-secondary md:text-4xl lg:text-5xl">
             What Our Users Say
           </h2>
-          <p className="mx-auto max-w-2xl text-pretty sm:text-lg text-secondary">
+          <p className="mx-auto max-w-2xl text-pretty text-base sm:text-lg md:text-xl text-secondary">
             Don't just take our word for it - hear from our satisfied customers
           </p>
         </div>
@@ -45,7 +45,7 @@ export function Testimonials() {
                 <div className="flex justify-center items-center mb-4">
                   <Quote fill="#3da975" className="text-primary" />
                 </div>
-                <p className="mb-4 text-secondary text-center">
+                <p className="mb-4 text-secondary text-center text-base md:text-lg">
                   "{testimonial.text}"
                 </p>
                 <p className="text-center font-semibold text-foreground">

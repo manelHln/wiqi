@@ -25,8 +25,9 @@ export function FeaturedProperties() {
   return (
     <section className="bg-white pb-8">
       <div className="max-w-7xl bg-primary/20 mx-auto px-6 sm:px-24 py-6 md:py-20 sm:rounded-2xl">
-        <h2 className="mb-8 text-center text-xl font-bold text-secondary md:text-3xl">
-          Be smart, save more by combining discounts with cashback and promo codes!
+        <h2 className="mb-8 text-center text-xl font-bold text-secondary md:text-3xl lg:text-4xl">
+          Be smart, save more by combining discounts with cashback and promo
+          codes!
         </h2>
 
         <div
@@ -39,7 +40,7 @@ export function FeaturedProperties() {
             </div>
           ))}
         </div>
-        <h3 className="text-secondary text-center text-xl mt-12 mb-8 font-bold">
+        <h3 className="text-secondary text-center text-xl md:text-2xl lg:text-3xl mt-12 mb-8 font-bold">
           Want more discounts with promo codes from your favorite retailers?
         </h3>
         {/* <div className="grid grid-cols-2 gap-6 md:grid-cols-5 ">

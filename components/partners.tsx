@@ -11,7 +11,7 @@ export function Partners() {
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-6">
-        <p className="mb-6 text-center font-bold text-2xl tracking-wider">
+        <p className="mb-6 text-center font-bold text-2xl md:text-3xl lg:text-4xl tracking-wider">
           Most visited top based USA partner merchants
         </p>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-[repeat(auto-fit,minmax(0,1fr))]">

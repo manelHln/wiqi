@@ -23,8 +23,9 @@ export function HeroSection() {
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           {/* Left side - Hero content and search */}
           <div>
-            <h1 className="mb-4 text-balance text-2xl font-medium text-secondary md:text-3xl lg:text-3xl">
-              Shop online, earn money. It's that simple to put cashback in your pocket.
+            <h1 className="mb-4 text-balance text-2xl font-medium text-secondary md:text-4xl lg:text-5xl">
+              Shop online, earn money. It's that simple to put cashback in your
+              pocket.
             </h1>
             {/* <Button className="bg-primary rounded-3xl py-6 px-9 text-xl">
               Register - 10$ gifted*
@@ -34,11 +35,7 @@ export function HeroSection() {
 
           <div className="flex justify-center items-center overflow-hidden rounded-2xl">
             <picture>
-              <source
-                srcSet="/hero2.png"
-                height={316}
-                width={442}
-              />
+              <source srcSet="/hero2.png" height={316} width={442} />
               <Image
                 src="/hero.png"
                 className="rounded-xl"

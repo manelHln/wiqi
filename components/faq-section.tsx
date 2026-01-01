@@ -42,7 +42,7 @@ export function FAQSection() {
   return (
     <section className="">
       <div className="container mx-auto px-6 py-16 md:py-24">
-        <h2 className="text-xl sm:text-4xl font-bold mb-12 sm:text-balance">
+        <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold mb-12 sm:text-balance">
           Everything you need to know about our cashback offers
         </h2>
 
@@ -56,7 +56,7 @@ export function FAQSection() {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full flex items-center cursor-pointer justify-between p-6 text-left transition-colors hover:bg-gray-50"
               >
-                <span className="font-semibold text-lg pr-8 text-balance">
+                <span className="font-semibold text-lg md:text-xl lg:text-2xl pr-8 text-balance">
                   {faq.question}
                 </span>
                 <Plus
@@ -79,10 +79,15 @@ export function FAQSection() {
           ))}
         </div>
         <div className="mt-12 font-normal text-xs leading-5">
-          *Note: Cashback amounts are credited after the merchant confirms the purchase. Processing times vary by merchant and may take several days. Some purchases (for example, gift cards or certain promotional categories) may be excluded from cashback.
+          *Note: Cashback amounts are credited after the merchant confirms the
+          purchase. Processing times vary by merchant and may take several days.
+          Some purchases (for example, gift cards or certain promotional
+          categories) may be excluded from cashback.
         </div>
         <div className="mt-6 text-xs leading-5">
-          **Important: Cashback eligibility and merchant terms apply. Wiqi reserves the right to modify or remove offers. For full details, please consult our Terms of Use.
+          **Important: Cashback eligibility and merchant terms apply. Wiqi
+          reserves the right to modify or remove offers. For full details,
+          please consult our Terms of Use.
         </div>
       </div>
     </section>
